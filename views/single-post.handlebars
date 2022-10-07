@@ -1,0 +1,44 @@
+<div class="container mt-5">
+
+    {{!-- post --}}
+    <div class="card custom-card m-3">
+        <div class="card-header">
+            <h3 class="card-title">{{blog.title}}</h3>
+            <p class="card-subtitle text-muted">{{blog.user.username}} - {{format_date blog.user.createdAt}}</p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                {{blog.text}}
+            </p>
+        </div>
+    </div>
+
+    {{!-- comment form --}}
+    <form id="new-comment-form" class="p-3">
+        <h5>What Do You Think?</h5>
+        <div class="input-group mb-3">
+            <input type="hidden" name="blog-id" value="{{blog.id}}">
+            <textarea name="comment-body" id="comment-body" cols="30" rows="2" class="form-control"></textarea required>
+        </div>
+
+        {{#if logged_in}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {{else}}
+            <button type="submit" class="btn btn-primary disabled">Sign in to Comment</button>
+        {{/if}}
+    </form>
+
+    {{!-- saved comments --}}
+    {{#each comments as |comment|}}
+
+    <div class="card custom-card m-3">
+        <div class="card-body">
+        <h5 class="card-subtitle text-muted">{{comment.user.username}}</h5>
+        <p>{{format_date comment.user.createdAt}}</p>
+        <p class="card-text">{{comment.text}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/comment.js"></script>

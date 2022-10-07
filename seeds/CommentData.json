@@ -1,0 +1,17 @@
+[
+    {
+        "text": "add 1",
+        "user_id": 1,
+        "blog_id": 1
+    },
+    {
+        "text": "add 2",
+        "user_id": 2,
+        "blog_id": 2
+    },
+    {
+        "text": "add 3",
+        "user_id": 2,
+        "blog_id": 1
+    }
+]
