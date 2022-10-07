@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
 
-const authorized = require('../../utils/authorized');
+const authorized = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     const blogData = await Blog.findAll();
