@@ -8,10 +8,5 @@
         "text": "add 2",
         "user_id": 2,
         "blog_id": 2
-    },
-    {
-        "text": "add 3",
-        "user_id": 2,
-        "blog_id": 1
     }
 ]
